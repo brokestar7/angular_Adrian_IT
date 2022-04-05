@@ -7,6 +7,15 @@
     display: grid;
     margin: 0 auto;
 }
+
+.header{
+
+    background-image: url(/sprint_1_Adrian/images/header.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* conseguir que se ponga la imagen de fondo, ya que ahora no cubre todo el header  */
+}
+
 /* --- nav bar ------ */
 .nav-bar{
 
