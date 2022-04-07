@@ -13,7 +13,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
     padding-top: 2rem;
-    background-image: url("/angular_Adrian_IT/sprint_1_Adrian/images/header.jpg");
+    background-image: url("/sprint_1_Adrian/images/header.jpg");
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0 -13rem ;
@@ -33,6 +33,7 @@
     width: 5rem;
     margin-left: 1rem;
     pointer-events: inherit;
+    animation: ensenarLogo 2s;
 }
 
 .nav-menu{
@@ -86,11 +87,15 @@
 
 .box-2{
     
-    margin: 8rem 0 5.5rem 0;
+    margin: 8rem 0 5.5rem 7rem;
     text-align: center;
     font-size: 2.5rem;
     color: rgb(255, 140, 0, 0.5);
-
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 46ch;
+    animation: mostrarTitulo 5s steps(46) , efectoParpadeo 0.5s infinite step-end alternate; 
+    overflow:hidden;
 }
 
 /* ---- layout articulos --------------*/
@@ -116,19 +121,31 @@ article{
 
 .img-text{
 
-    
-
-}
-
-.article-img{
     width: 23rem;
     height: 15rem;
-    position: relative;
+    display: flex;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+.cultura{
+    background-image: url("/sprint_1_Adrian/images/sakura.jpg");
+}
+.gastronomia{
+    background-image: url(/sprint_1_Adrian/images/comida.jpg);
+}
+.turismo{
+    background-image: url(/sprint_1_Adrian/images/fuji.jpg);
+}
+.vida-nocturna{
+    background-image: url(/sprint_1_Adrian/images/noche.jpg);
+}
+
 .date{
-
-    
-
+    align-self: flex-end;
+    color: rgb(255, 255, 0, 0.6);
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 article > h2 {
@@ -195,22 +212,47 @@ footer > div{
 
 /* ---------keyframes ----------- */
 
-@keyframes moverIzquierda{
+@keyframes ensenarLogo{
 
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
 
 
 }
 
 @keyframes mostrarTitulo{
 
+    from {width: 0;}
 
+}
+@keyframes efectoParpadeo{
 
+    50%{border-color: transparent}
+    
 }
 
 
 /* -------Tablet-------------- */
 /* arreglar media querys. No funcina el grid  */
 @media (max-width: 768px) {
+    .container{
+
+        grid-template-columns: 1fr;
+
+    }
+    
+
+    .aside{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 
     .article-layout{
         
