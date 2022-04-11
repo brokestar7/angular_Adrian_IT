@@ -6,10 +6,16 @@
     max-width: 1200px;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "header header" 
+        "main sidebar"
+        "footer footer"
+    ;
     margin: 0 auto;
 }
 
 .header{
+    grid-area: header;
     grid-column-start: 1;
     grid-column-end: 3;
     padding-top: 2rem;
@@ -87,21 +93,17 @@
 
 .box-2{
     
-    margin: 8rem 0 5.5rem 7rem;
+    margin: 8rem 0 5.5rem 0rem;
     text-align: center;
     font-size: 2.5rem;
     color: rgb(255, 140, 0, 0.5);
-    white-space: nowrap;
-    border-right: 4px solid;
-    width: 46ch;
-    animation: mostrarTitulo 5s steps(46) , efectoParpadeo 0.5s infinite step-end alternate; 
-    overflow:hidden;
+    animation: mostrarTitulo 5s 
 }
 
 /* ---- layout articulos --------------*/
 
 .article-layout{
-
+    grid-area: main;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
@@ -183,7 +185,7 @@ article > h2 {
 /* -----layout aside------- */
 
 aside{
-
+    grid-area: sidebar;
     padding:1rem;
     background-color: rgb(209, 205, 205);
     margin-left: 0.5rem;
@@ -194,7 +196,7 @@ aside{
 /* ---------footer--------------- */
 
 footer{
-
+    grid-area: footer;
     background-color:rgb(209, 205, 205);
     color: grey;
     margin-top: 0.5rem;
@@ -216,6 +218,17 @@ footer > div{
 
     0%{
         opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translate(0);
+    }
+
+}
+
+@keyframes mostrarTitulo{
+    0%{
+        opacity: 0;
     }
     50%{
         opacity: 0.5;
@@ -224,45 +237,127 @@ footer > div{
         opacity: 1;
     }
 
-
-}
-
-@keyframes mostrarTitulo{
-
-    from {width: 0;}
-
-}
-@keyframes efectoParpadeo{
-
-    50%{border-color: transparent}
-    
 }
 
 
 /* -------Tablet-------------- */
-/* arreglar media querys. No funcina el grid  */
-@media (max-width: 768px) {
-    .container{
+@media (max-width: 811px) {
+    html{
 
-        grid-template-columns: 1fr;
+        font-size: 80%;
 
     }
+    .container{
+        /* grid-template-columns: auto; */
+        grid-template-areas: 
+            "header" 
+            "main" 
+            "sidebar" 
+            "footer"
+        ;
+        gap: 2rem;
+        align-content: center;
+    }
+    
+    
     
 
-    .aside{
+    .article-layout{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: grid;
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        
+    }
+    article{
+
+        width: 25rem;
+        padding: 0.5rem;
+        background-color:whitesmoke;
+        color: rgb(97, 97, 97);
+    
+    }
+    .img-text{
+
+        width: 25rem;
+        height: 16rem;
+        display: flex;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .date{
+        color: rgb(255, 255, 0, 0.6);
+        padding-left: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    aside{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-left: 0;
+    }
+}
+
+/* -----------MOBILE------------------- */
+
+@media (max-width: 694px){
+
+    html{
+        font-size: 75%;
+    }
+
+    .header{
+
+        margin-bottom: 0;
+        background-position: 0 0 ;
+
+    }
+
+    .article-layout{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-template-areas: 
+            "cultura"
+            "gastronomia"
+            "turismo"
+            "vidaNocturna"
+        ;
+    }
+
+    .a-cultura{
+        grid-area: cultura;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .a-gastronomia{
+        grid-area: gastronomia;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .a-turismo{
+        grid-area: turismo;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .a-vidaNocturna{
+        grid-area: vidaNocturna;
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .article-layout{
-        
-        grid-template-columns: 1fr;
-        
+    article{
+        width: fit-content;
     }
-    .nav-item{
+    .img-text{
 
-        color: red;
-
+        width: 100%;
+        height: 20rem;
+        background-size: cover;
+    }
+    .article-text{
+        flex-direction: column;
     }
 
 }
