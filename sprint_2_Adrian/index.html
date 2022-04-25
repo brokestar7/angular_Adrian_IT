@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <title>Sprint 2 Bootstrap</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mt-3">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light mt-3 pb-5">
         <div class="container-xl">
             <a href="#" class="navbar-brand justify-content-start"><img src="./Imagenes/logo-bookmark.svg" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -20,32 +21,55 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav mx-3 fw-bold">
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" aria-current="page" href="#">FEATURES</a>
+                        <a class="nav-link text-gray-100" aria-current="page" href="#">FEATURES</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-secondary" href="#">PRICING</a>
+                        <a class="nav-link text-gray-100" href="#">PRICING</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-secondary" href="#">CONTACT</a>
+                        <a class="nav-link text-gray-100" href="#">CONTACT</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link rounded bg-primary text-white">LOGIN</a>
+                        <a class="nav-link rounded bg-secondary text-white">LOGIN</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container-xl mt-5 row justify-content-center">
-        <div class="col">
-            <h1 class="fw-bold">A Simple Bookmark Manager</h1>
-            <p class="text-secondary">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+    <!-- Principal -->
+    <div class="d-flex container-xl mt-5 text-center">
+        <div class="align-self-center">
+            <h1 class="col fw-bold">A Simple Bookmark Manager</h1>
+            <p class="text-muted">A clean and simple interface to organize your favourite websites. Open a new browser
+                tab and see your sites load instantly. Try it for free.</p>
             <button class="btn btn-primary m-2 shadow-sm">Get it on Chrome</button>
-            <button class="btn btn-light m-2 shadow-sm">Get it on Firefox</button>
+            <button class="btn btn-light m-2 shadow-sm text-muted">Get it on Firefox</button>
         </div>
-        <div class="col">
+        <div>
             <img src="./Imagenes/illustration-hero.svg">
         </div>
     </div>
+    <!-- Features -->
+    <div class="container w-50 mt-5">
+        <h2 class="text-center fw-bold">Features</h2>
+        <p class="text-center text-muted">Our aim is to make it quick and easy for you to access your favourite
+            websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+        <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active fw-bold text-muted" aria-current="page" href="#">Simple Bookmarking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-muted" href="#">Speedy Searching</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-muted" href="#">Easy Sharing</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-xl mt-5">
+        <img src="./Imagenes/illustration-features-tab-1.svg" alt="">
+    </div>
+
 </body>
 
 </html>
